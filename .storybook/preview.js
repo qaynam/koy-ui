@@ -1,12 +1,13 @@
-import './global.css';
-
-/**
- * @types {import('@storybook/svelte').Preview}
- */
-const Preview = {
-	parameters: {
-		layout: 'centered'
-	}
+/** @type { import('@storybook/svelte').Preview } */
+const preview = {
+  parameters: {
+    controls: {
+      matchers: {
+       color: /(background|color)$/i,
+       date: /Date$/i,
+      },
+    },
+  },
 };
 
-export default Preview;
+export default preview;

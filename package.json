@@ -1,50 +1,71 @@
 {
-	"name": "koy-ui",
-	"private": true,
-	"version": "0.1.0",
-	"type": "module",
-	"exports": {
-		".": {
-			"import": "./dist/index.js",
-			"require": "./dist/index.umd.cjs"
-		},
-		"./global.css": "./src/global.css"
-	},
-	"files": [
-		"dist",
-		"src"
-	],
-	"scripts": {
-		"dev": "vite",
-		"build": "vite build && cp ./src/ui/styles/global.css ./dist/global.css",
-		"preview": "vite preview",
-		"check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json",
-		"storybook": "storybook dev --no-open "
-	},
-	"devDependencies": {
-		"@storybook/addon-svelte-csf": "^4.2.0",
-		"@storybook/svelte-vite": "^8.4.7",
-		"@sveltejs/vite-plugin-svelte": "^5.0.0",
-		"@tsconfig/svelte": "^5.0.4",
-		"@types/eslint": "^9.6.1",
-		"@types/node": "^22.10.1",
-		"@typescript-eslint/eslint-plugin": "^8.17.0",
-		"@typescript-eslint/parser": "^8.17.0",
-		"eslint": "^9.16.0",
-		"eslint-plugin-svelte": "^2.46.1",
-		"prettier": "^3.4.2",
-		"prettier-plugin-svelte": "^3.3.2",
-		"storybook": "^8.4.7",
-		"svelte": "^5.2.7",
-		"svelte-check": "^4.1.1",
-		"svelte-package": "^0.1.0",
-		"tslib": "^2.8.1",
-		"typescript": "~5.6.2",
-		"vite": "^6.0.1"
-	},
-	"dependencies": {
-		"@emotion/css": "^11.13.5",
-		"svelte-french-toast": "^1.2.0",
-		"svelte-portal": "^2.2.1"
-	}
+  "name": "lib-test",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build && npm run package",
+    "preview": "vite preview",
+    "package": "svelte-kit sync && svelte-package && publint",
+    "prepublishOnly": "npm run package",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "format": "prettier --write .",
+    "lint": "prettier --check . && eslint .",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js"
+    }
+  },
+  "peerDependencies": {
+    "svelte": "^5.0.0"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.2",
+    "@eslint/compat": "^1.2.3",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/addon-interactions": "^8.4.7",
+    "@storybook/addon-svelte-csf": "^5.0.0-next.13",
+    "@storybook/blocks": "^8.4.7",
+    "@storybook/svelte": "^8.4.7",
+    "@storybook/sveltekit": "^8.4.7",
+    "@storybook/test": "^8.4.7",
+    "@sveltejs/adapter-auto": "^3.0.0",
+    "@sveltejs/kit": "^2.9.0",
+    "@sveltejs/package": "^2.0.0",
+    "@sveltejs/vite-plugin-svelte": "^5.0.0",
+    "eslint": "^9.7.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-svelte": "^2.36.0",
+    "globals": "^15.0.0",
+    "prettier": "^3.3.2",
+    "prettier-plugin-svelte": "^3.2.6",
+    "publint": "^0.2.0",
+    "sass": "^1.82.0",
+    "storybook": "^8.4.7",
+    "svelte": "^5.0.0",
+    "svelte-check": "^4.0.0",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.0.0",
+    "vite": "^6.0.0"
+  },
+  "dependencies": {
+    "@emotion/css": "^11.13.5",
+    "csstype": "^3.1.3",
+    "svelte-portal": "^2.2.1"
+  }
 }
