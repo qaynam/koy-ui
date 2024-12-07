@@ -9,7 +9,7 @@ const SelectBox = ({ error }: { error: boolean }) => css`
 		outline: none;
 		border: none;
 		color: ${colors.dark};
-		width: 100%;
+		width: max-content;
 	}
 
 	border: ${borders.gray400};
