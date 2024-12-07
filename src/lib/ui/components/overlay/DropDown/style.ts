@@ -7,11 +7,11 @@ const DropDown = css`
 	display: inline-block;
 `;
 
-const DropDownItems = ({ align }: { align: 'left' | 'right' }) => css`
+const DropDownItems = ({ align }: { align?: 'left' | 'right' }) => css`
 	position: absolute;
 	z-index: 1;
 	width: fit-content;
-	${align === 'left'
+	${align === 'left' || !align
 		? css`
 				left: 0;
 			`
