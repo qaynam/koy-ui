@@ -4,12 +4,15 @@
 	import type { InputComponentType } from './type';
 	import type { FormEventHandler, HTMLInputAttributes } from 'svelte/elements';
 
-	interface $$Props extends HTMLInputAttributes {
+	interface $$Props
+		extends Omit<
+			HTMLInputAttributes,
+			`aria-${string}` | `on:${string}` | `on${string}` | `bind:${string}`
+		> {
 		icon?: IconType | undefined;
 		iconPosition?: InputComponentType.IconPosition;
-		'on:iconClick'?: CustomEvent<null> | undefined;
 		iconClickable?: boolean;
-		width?: 'fill';
+		width?: 'fill' | 'auto';
 		inputmode?: InputComponentType.InputMode;
 		checked?: boolean;
 		error?: boolean;
@@ -23,7 +26,7 @@
 	export let iconClickable: boolean = false;
 	export let value: string = '';
 	export let type: $$Props['type'] = 'text';
-	export let width: $$Props['width'] = undefined;
+	export let width: $$Props['width'] = 'auto';
 	export let error: $$Props['error'] = false;
 	export let inputmode: $$Props['inputmode'] = 'text';
 	export let onIconClick: $$Props['onIconClick'] = () => {};
@@ -34,7 +37,12 @@
 {#if icon}
 	<div class={styles.Wrapper}>
 		<input
-			class={styles.Base({ withIcon: !!icon, fill: !!width, error: !!error, iconPosition })}
+			class={styles.Base({
+				withIcon: !!icon,
+				fill: width === 'fill',
+				error: !!error,
+				iconPosition
+			})}
 			bind:value
 			on:change={onChange}
 			on:input={onInput}
@@ -54,7 +62,7 @@
 	</div>
 {:else}
 	<input
-		class={styles.Base({ withIcon: !!icon, fill: !!width, error: !!error, iconPosition })}
+		class={styles.Base({ withIcon: !!icon, fill: width === 'fill', error: !!error, iconPosition })}
 		bind:value
 		on:change={onChange}
 		on:input={onInput}

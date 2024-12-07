@@ -1,8 +1,7 @@
 <script lang="ts">
-	import type { HTMLInputAttributes } from 'svelte/elements';
 	import style from './style';
 
-	interface $$Props extends Omit<HTMLInputAttributes, 'type'> {
+	interface $$Props {
 		value?: boolean;
 		checked: boolean;
 	}

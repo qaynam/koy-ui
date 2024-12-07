@@ -1,7 +1,6 @@
 <script lang="ts" context="module">
-	import { defineMeta } from '@storybook/addon-svelte-csf';
-	import Alert from './Alert.svelte';
-	import { Typography, VStack } from '$ui/components';
+	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
+	import { Alert } from '$ui/components';
 
 	const { Story } = defineMeta({
 		title: 'components/feedback/Alert',
@@ -13,32 +12,23 @@
 					options: ['info', 'success', 'error']
 				}
 			}
+		},
+		args: {
+			type: 'info'
 		}
 	});
 </script>
 
-<Story name="Default">
-	<VStack spacing="X10">
-		<VStack>
-			<Typography as="h3" font="medium_M_bold">Info</Typography>
-			<Alert type="info">
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nulla repellat voluptas
-				odio pariatur, fuga eius nihil ut omnis dolores?
-			</Alert>
-		</VStack>
-		<VStack>
-			<Typography as="h3" font="medium_M_bold">Success</Typography>
-			<Alert type="success">
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nulla repellat voluptas
-				odio pariatur, fuga eius nihil ut omnis dolores?
-			</Alert>
-		</VStack>
-		<VStack>
-			<Typography as="h3" font="medium_M_bold">Error</Typography>
-			<Alert type="error">
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nulla repellat voluptas
-				odio pariatur, fuga eius nihil ut omnis dolores?
-			</Alert>
-		</VStack>
-	</VStack>
-</Story>
+<script lang="ts">
+	setTemplate(template);
+</script>
+
+{#snippet template(args: Args<typeof Story>)}
+	<Alert type="info" {...args}>
+		Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum excepturi magnam, quidem,
+		quisquam, sed perspiciatis dolore fugiat quasi amet suscipit ipsa laboriosam voluptate harum
+		quam dicta odio delectus iure adipisci?
+	</Alert>
+{/snippet}
+
+<Story name="Default"></Story>

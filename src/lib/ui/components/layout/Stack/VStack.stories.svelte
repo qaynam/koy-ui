@@ -1,17 +1,26 @@
 <script lang="ts" context="module">
-	import VStack from './VStack.svelte';
-	import { defineMeta } from '@storybook/addon-svelte-csf';
+	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
+	import { VStack } from '$ui/components';
 
 	const { Story } = defineMeta({
 		title: 'components/layout/VStack',
-		component: VStack
+		component: VStack,
+		args: {
+			spacing: 'default'
+		}
 	});
 </script>
 
-<Story name="Default">
-	<VStack>
+<script lang="ts">
+	setTemplate(template);
+</script>
+
+{#snippet template(args: Args<typeof Story>)}
+	<VStack {...args}>
 		<div>Item 1</div>
 		<div>Item 2</div>
 		<div>Item 3</div>
 	</VStack>
-</Story>
+{/snippet}
+
+<Story name="Default"></Story>

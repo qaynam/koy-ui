@@ -1,23 +1,23 @@
 <script lang="ts" context="module">
-	import { defineMeta } from '@storybook/addon-svelte-csf';
+	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
 	import FormLabel from './FormLabel.svelte';
 
 	const { Story } = defineMeta({
 		title: 'components/form/FormLabel',
 		component: FormLabel,
-		argTypes: {
-			// label: { control: 'text' },
-			// required: { control: 'boolean' },
-			// disabled: { control: 'boolean' },
-			// error: { control: 'boolean' },
-			// helpText: { control: 'text' }
-		},
-		parameters: {
-			controls: { expanded: true }
+		argTypes: {},
+		args: {
+			required: false
 		}
 	});
 </script>
 
-<Story name="Default">
-	<FormLabel>Form label</FormLabel>
-</Story>
+<script lang="ts">
+	setTemplate(template);
+</script>
+
+{#snippet template(args: Args<typeof Story>)}
+	<FormLabel required={false} {...args}>Form Label</FormLabel>
+{/snippet}
+
+<Story name="Default"></Story>

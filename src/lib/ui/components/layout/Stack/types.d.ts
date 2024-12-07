@@ -56,7 +56,6 @@ export namespace StackType {
 		class?: string | undefined;
 		width?: StackType.Width;
 		direction?: StackType.Direction;
-		stripeLines?: boolean;
 		wrap?: boolean;
 	};
 }

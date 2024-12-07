@@ -1,5 +1,5 @@
 <script module lang="ts">
-	import { defineMeta } from '@storybook/addon-svelte-csf';
+	import { defineMeta, type Args, setTemplate } from '@storybook/addon-svelte-csf';
 	import { Overlay } from '$ui/components';
 
 	const { Story } = defineMeta({
@@ -18,9 +18,15 @@
 	});
 </script>
 
-<p>
-	Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic omnis neque illum eaque nihil modi
-	facilis, vero nulla nobis ipsa, praesentium eos? Ipsum quae maxime tempora nesciunt a, dolore
-	quasi.
-</p>
+<script>
+	setTemplate(template);
+</script>
+
+{#snippet template(args: Args<typeof Story>)}
+	<Overlay show={true} {...args}>
+		<p>some other contents</p>
+		<img src="https://picsum.photos/200/?random=5" style:object-fit="contain" alt="random sample" />
+	</Overlay>
+{/snippet}
+
 <Story name="default" />

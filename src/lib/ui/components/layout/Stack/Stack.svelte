@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Spacing } from '../../../styles/types';
+	import type { Spacing } from '$ui/styles';
 	import styles from './style';
 	import type { StackType } from './types';
 

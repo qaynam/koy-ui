@@ -1,7 +1,12 @@
 <script lang="ts" context="module">
+	import { colors } from '$ui/styles';
 	import Typography from './Typography.svelte';
-	import { defineMeta } from '@storybook/addon-svelte-csf';
-	import { VStack } from '../..';
+	import {
+		defineMeta,
+		setTemplate,
+		type Args,
+		type StoryContext
+	} from '@storybook/addon-svelte-csf';
 
 	const { Story } = defineMeta({
 		title: 'components/base/Typography',
@@ -18,15 +23,36 @@
 					type: 'select',
 					options: ['title', 'body_M_Bold', 'body_M', 'body_S_Bold', 'body_S']
 				}
+			},
+			color: {
+				control: {
+					type: 'select',
+					options: Object.keys(colors)
+				}
 			}
+		},
+		args: {
+			as: 'p',
+			font: 'body',
+			align: 'left',
+			color: 'black',
+			truncate: false,
+			wordBreak: 'normal',
+			whiteSpace: 'initial'
 		}
 	});
 </script>
 
-<Story name="Default">
-	<VStack>
-		<Typography as="h1" font="title">h1. Heading (title)</Typography>
-		<Typography as="h2" font="body_M_Bold">h2. Heading (body m bold)</Typography>
-		<Typography as="p">p. Paragraph</Typography>
-	</VStack>
-</Story>
+<script lang="ts">
+	setTemplate(template);
+</script>
+
+{#snippet template(args: Args<typeof Story>, context: StoryContext<typeof Story>)}
+	<Typography {...args}>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Et beatae officiis accusantium dolorum
+		corporis incidunt, fuga aspernatur saepe fugiat vero ullam in nam harum eos exercitationem cum,
+		eligendi, veniam quae.
+	</Typography>
+{/snippet}
+
+<Story name="Default"></Story>

@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { Spinner } from '$ui/components';
-	import { type Component } from 'svelte';
+	import { Icon, Spinner, type IconType } from '$ui/components';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 	import styles from './style';
 	import type { ButtonTypes } from './types';
@@ -8,15 +7,16 @@
 	interface $$Props {
 		/**
 		 * ボタンに表示するアイコン
+		 *
 		 * @default undefined
 		 */
-		icon?: Component;
+		icon?: IconType;
 		/**
 		 * ボタンに表示するアイコンの位置
 		 *
 		 * @default 'left'
 		 */
-		iconPin?: ButtonTypes.IconPosition;
+		iconPosition?: ButtonTypes.IconPosition;
 		/**
 		 * ボタンの種類
 		 */
@@ -77,7 +77,7 @@
 		onClick?: (e: MouseEvent) => void;
 	}
 
-	export let icon: Component | undefined = undefined;
+	export let icon: IconType | undefined = undefined;
 	export let iconPosition: 'left' | 'right' = 'left';
 	export let variant: ButtonTypes.ButtonVariant = 'primary';
 	export let width: ButtonTypes.Width = 'auto';
@@ -136,11 +136,11 @@
 	{/if}
 	<div class={styles.ButtonContent({ withIcon: Boolean(icon), loading, width, color, variant })}>
 		{#if iconPosition === 'left' && icon}
-			<svelte:component this={icon} />
+			<svelte:component this={Icon[icon]} />
 		{/if}
 		<slot />
 		{#if iconPosition === 'right' && icon}
-			<svelte:component this={icon} />
+			<svelte:component this={Icon[icon]} />
 		{/if}
 	</div>
 </button>

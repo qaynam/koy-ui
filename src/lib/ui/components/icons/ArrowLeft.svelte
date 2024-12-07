@@ -9,21 +9,21 @@
 	<g clip-path="url(#clip0_27_1610)">
 		<path
 			d="M5 12H19"
-			stroke="#3E3E3E"
+			stroke="currentColor"
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
 		/>
 		<path
 			d="M5 12L11 18"
-			stroke="#3E3E3E"
+			stroke="currentColor"
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
 		/>
 		<path
 			d="M5 12L11 6"
-			stroke="#3E3E3E"
+			stroke="currentColor"
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
