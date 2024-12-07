@@ -1,6 +1,6 @@
 {
 	"name": "koy-ui",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"license": "MIT",
 	"private": false,
 	"main": "dist/index.js",
@@ -8,6 +8,10 @@
 		"email": "npm@qaynam.dev",
 		"name": "Qaynam",
 		"url": "https://qaynan.dev"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/qaynam/koy-ui.git"
 	},
 	"scripts": {
 		"dev": "vite dev",
