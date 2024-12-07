@@ -1,39 +1,36 @@
-<script context="module" lang="ts">
-	import { Story } from '@storybook/addon-svelte-csf';
-	import type { Meta } from '@storybook/svelte';
+<script module lang="ts">
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import { VStack } from '../..';
 	import Icons from '../../icons';
 	import Button from './Button.svelte';
 
-	export const meta: Meta<Button> = {
+	const { Story, meta } = defineMeta({
 		title: 'components/base/Button',
-		component: Button
-	};
+		component: Button,
+		argTypes: {
+			variant: {
+				control: {
+					type: 'select',
+					options: ['primary', 'secondary', 'tertiary']
+				}
+			}
+		}
+	});
 </script>
 
 <!-- Dynamic snippet should be disabled for this story -->
-<Story name="Primary">
-	<VStack>
-		<div>
-			<h2>Primary</h2>
-			<hr />
-		</div>
-		<div>
-			<Button>Button</Button>
-		</div>
-		<div>
-			<Button loading>Button</Button>
-		</div>
-		<div>
-			<Button width="wider" shadow={false}>Button</Button>
-		</div>
-		<div>
-			<Button icon={Icons.Eye}>With Icon</Button>
-		</div>
-		<div>
-			<Button icon={Icons.Eye} disabled>With Icon (disabled)</Button>
-		</div>
-	</VStack>
+<Story
+	name="Primary"
+	args={{
+		loading: false,
+		shadow: true,
+		width: 'auto',
+		icon: undefined,
+		disabled: false,
+		children: 'Button'
+	}}
+>
+	<Button>Primary</Button>
 </Story>
 
 <Story name="Secondary">

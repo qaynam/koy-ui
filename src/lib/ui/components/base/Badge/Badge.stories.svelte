@@ -1,18 +1,17 @@
-<script lang="ts" context="module">
-	import { Story } from '@storybook/addon-svelte-csf';
-	import type { Meta } from '@storybook/svelte';
-	import type { SvelteComponent } from 'svelte';
+<script module>
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import Badge from './Badge.svelte';
-	import { VStack } from '$ui/components';
 
-	export const meta: Meta<SvelteComponent<Badge>> = {
-		title: 'components/base/Badge'
-	};
+	const { Story } = defineMeta({
+		title: 'components/base/Badge',
+		component: Badge,
+		tags: ['autodocs']
+	});
 </script>
 
-<Story name="Default">
-	<VStack>
-		<Badge text="greenLight" bg="greenLight" />
-		<Badge text="gray400" bg="gray400" />
-	</VStack>
-</Story>
+<Story
+	name="Default"
+	args={{
+		text: 'Badge Component'
+	}}
+/>
