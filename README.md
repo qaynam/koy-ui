@@ -1,6 +1,6 @@
 ## Koy UI
 
-Koy UI is a simle UI libirary for Svelte.
+Koy UI is a simple UI libirary for Svelte.
 
 ## Installation
 
