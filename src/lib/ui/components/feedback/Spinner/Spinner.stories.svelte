@@ -1,12 +1,11 @@
 <script lang="ts" context="module">
-	import { Story } from '@storybook/addon-svelte-csf';
-	import type { Meta } from '@storybook/svelte';
-	import type { SvelteComponent } from 'svelte';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import Spinner from './Spinner.svelte';
 
-	export const meta: Meta<SvelteComponent<Spinner>> = {
-		title: 'components/feedback/Spinner'
-	};
+	const { Story } = defineMeta({
+		title: 'components/feedback/Spinner',
+		component: Spinner
+	});
 </script>
 
 <Story name="Default">

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Spinner } from '$ui/components';
-	import { type ComponentType, type SvelteComponent } from 'svelte';
+	import { type Component } from 'svelte';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 	import styles from './style';
 	import type { ButtonTypes } from './types';
@@ -10,7 +10,7 @@
 		 * ボタンに表示するアイコン
 		 * @default undefined
 		 */
-		icon?: ComponentType<SvelteComponent>;
+		icon?: Component;
 		/**
 		 * ボタンに表示するアイコンの位置
 		 *
@@ -77,7 +77,7 @@
 		onClick?: (e: MouseEvent) => void;
 	}
 
-	export let icon: ComponentType<SvelteComponent> | undefined = undefined;
+	export let icon: Component | undefined = undefined;
 	export let iconPosition: 'left' | 'right' = 'left';
 	export let variant: ButtonTypes.ButtonVariant = 'primary';
 	export let width: ButtonTypes.Width = 'auto';
@@ -93,10 +93,10 @@
 		(variant === 'primary' ? 'lighter' : variant == 'secondary' ? 'default' : 'darker') as any;
 </script>
 
-<!-- 
+<!--
 	@component Button
 	これはボタンコンポーネントです。
-	
+
 	@param icon ボタンに表示するアイコン
 
 	@param variant ボタンの種類

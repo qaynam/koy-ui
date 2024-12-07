@@ -1,13 +1,12 @@
 <script lang="ts" context="module">
-	import { Story } from '@storybook/addon-svelte-csf';
-	import type { Meta } from '@storybook/svelte';
-	import type { SvelteComponent } from 'svelte';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import TextArea from './TextArea.svelte';
 	import { Typography, VStack } from '$ui/components';
 
-	export const meta: Meta<SvelteComponent<TextArea>> = {
-		title: 'components/form/TextArea'
-	};
+	const { Story } = defineMeta({
+		title: 'components/form/TextArea',
+		component: TextArea
+	});
 </script>
 
 <Story name="Default">

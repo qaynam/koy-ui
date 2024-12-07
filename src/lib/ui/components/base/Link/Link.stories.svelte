@@ -1,13 +1,22 @@
 <script context="module" lang="ts">
-	import type { Meta } from '@storybook/svelte';
-	import type { SvelteComponent } from 'svelte';
 	import Link from './Link.svelte';
-	import { Story } from '@storybook/addon-svelte-csf';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import { VStack } from '../..';
 
-	export const meta: Meta<SvelteComponent<typeof Link>> = {
-		title: 'components/base/Link'
-	};
+	const { Story } = defineMeta({
+		title: 'components/base/Link',
+		component: Link,
+		argTypes: {
+			external: {
+				control: 'boolean',
+				defaultValue: false
+			},
+			underline: {
+				control: 'boolean',
+				defaultValue: false
+			}
+		}
+	});
 </script>
 
 <Story name="Default">

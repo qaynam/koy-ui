@@ -1,13 +1,11 @@
 <script lang="ts" context="module">
-	import { Story } from '@storybook/addon-svelte-csf';
-	import type { Meta } from '@storybook/svelte';
-	import type { SvelteComponent } from 'svelte';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import { VStack } from '../..';
 	import Input from './Input.svelte';
 
-	export const meta: Meta<SvelteComponent<Input>> = {
+	const { Story } = defineMeta({
 		title: 'components/form/Input'
-	};
+	});
 </script>
 
 <Story name="Default">

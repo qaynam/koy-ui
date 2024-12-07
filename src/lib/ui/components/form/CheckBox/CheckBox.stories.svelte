@@ -1,13 +1,11 @@
 <script lang="ts" context="module">
-	import { Story } from '@storybook/addon-svelte-csf';
-	import type { Meta } from '@storybook/svelte';
-	import type { SvelteComponent } from 'svelte';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import CheckBox from './CheckBox.svelte';
 	import { FormLabel } from '$ui/components';
 
-	export const meta: Meta<SvelteComponent<CheckBox>> = {
+	const { Story } = defineMeta({
 		title: 'components/form/CheckBox'
-	};
+	});
 </script>
 
 <Story name="Default">

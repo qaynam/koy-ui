@@ -1,13 +1,29 @@
 <script lang="ts" context="module">
-	import { Story } from '@storybook/addon-svelte-csf';
-	import type { Meta } from '@storybook/svelte';
-	import type { SvelteComponent } from 'svelte';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import ProgressBar from './ProgressBar.svelte';
 	import { Button, HStack } from '../..';
 
-	export const meta: Meta<SvelteComponent<ProgressBar>> = {
-		title: 'components/display/ProgressBar'
-	};
+	const { Story } = defineMeta({
+		title: 'components/display/ProgressBar',
+		component: ProgressBar,
+		argTypes: {
+			started: {
+				control: {
+					type: 'boolean'
+				}
+			},
+			complete: {
+				control: {
+					type: 'boolean'
+				}
+			},
+			canceled: {
+				control: {
+					type: 'boolean'
+				}
+			}
+		}
+	});
 </script>
 
 <script lang="ts">

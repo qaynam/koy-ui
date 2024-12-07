@@ -40,7 +40,7 @@ const Icon = {
 	XMark,
 	DotVertical,
 	Yen
-};
+} as const;
 
 export type IconType = keyof typeof Icon;
 

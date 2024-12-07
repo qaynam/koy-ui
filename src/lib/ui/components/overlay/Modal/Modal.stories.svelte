@@ -1,13 +1,12 @@
 <script lang="ts" context="module">
 	import { Button, Modal } from '$ui/components';
 	import ModalRoot from './Modal.svelte';
-	import { Story } from '@storybook/addon-svelte-csf';
-	import type { Meta } from '@storybook/svelte';
-	import type { SvelteComponent } from 'svelte';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 
-	export const meta: Meta<SvelteComponent<ModalRoot>> = {
-		title: 'components/overlay/Modal'
-	};
+	const { Story } = defineMeta({
+		title: 'components/overlay/Modal',
+		component: ModalRoot
+	});
 </script>
 
 <script lang="ts">

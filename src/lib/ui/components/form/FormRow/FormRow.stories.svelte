@@ -1,15 +1,13 @@
 <script lang="ts" context="module">
-	import { Story } from '@storybook/addon-svelte-csf';
-	import type { Meta } from '@storybook/svelte';
-	import type { SvelteComponent } from 'svelte';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import FormLabel from '../FormLabel/FormLabel.svelte';
 	import Input from '../Input/Input.svelte';
 	import FormRow from './FormRow.svelte';
 	import { VStack } from '../..';
 
-	export const meta: Meta<SvelteComponent<FormRow>> = {
+	const { Story } = defineMeta({
 		title: 'components/form/FormRow'
-	};
+	});
 
 	const example: string = `<FormRow>
   <FormLabel htmlFor="input">label</FormLabel>

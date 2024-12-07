@@ -1,10 +1,10 @@
 <script module lang="ts">
-	import { defineMeta } from '@storybook/addon-svelte-csf';
+	import { defineMeta, Template } from '@storybook/addon-svelte-csf';
 	import { VStack } from '../..';
 	import Icons from '../../icons';
 	import Button from './Button.svelte';
 
-	const { Story, meta } = defineMeta({
+	const { Story } = defineMeta({
 		title: 'components/base/Button',
 		component: Button,
 		argTypes: {
@@ -18,9 +18,8 @@
 	});
 </script>
 
-<!-- Dynamic snippet should be disabled for this story -->
 <Story
-	name="Primary"
+	name="default"
 	args={{
 		loading: false,
 		shadow: true,
@@ -30,15 +29,11 @@
 		children: 'Button'
 	}}
 >
-	<Button>Primary</Button>
+	<Button>button</Button>
 </Story>
 
 <Story name="Secondary">
 	<VStack>
-		<div>
-			<h2>Secondary</h2>
-			<hr />
-		</div>
 		<div>
 			<Button variant="secondary">Button</Button>
 		</div>
@@ -59,10 +54,6 @@
 
 <Story name="tertiary">
 	<VStack>
-		<div>
-			<h2>tertiary</h2>
-			<hr />
-		</div>
 		<div>
 			<Button variant="tertiary">Button</Button>
 		</div>

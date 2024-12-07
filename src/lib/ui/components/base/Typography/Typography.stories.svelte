@@ -1,13 +1,26 @@
 <script lang="ts" context="module">
-	import type { Meta } from '@storybook/svelte';
-	import type { SvelteComponent } from 'svelte';
 	import Typography from './Typography.svelte';
-	import { Story } from '@storybook/addon-svelte-csf';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import { VStack } from '../..';
 
-	export const meta: Meta<SvelteComponent<Typography>> = {
-		title: 'components/base/Typography'
-	};
+	const { Story } = defineMeta({
+		title: 'components/base/Typography',
+		component: Typography,
+		argTypes: {
+			as: {
+				control: {
+					type: 'select',
+					options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span']
+				}
+			},
+			font: {
+				control: {
+					type: 'select',
+					options: ['title', 'body_M_Bold', 'body_M', 'body_S_Bold', 'body_S']
+				}
+			}
+		}
+	});
 </script>
 
 <Story name="Default">

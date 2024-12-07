@@ -1,12 +1,11 @@
 <script lang="ts" context="module">
-	import type { SvelteComponent } from 'svelte';
-	import type { Meta } from '@storybook/svelte';
-	import { Story } from '@storybook/addon-svelte-csf';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import HStack from './HStack.svelte';
 
-	export const meta: Meta<SvelteComponent<HStack>> = {
-		title: 'components/layout/HStack'
-	};
+	const { Story } = defineMeta({
+		title: 'components/layout/HStack',
+		component: HStack
+	});
 </script>
 
 <Story name="Default">

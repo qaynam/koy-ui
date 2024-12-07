@@ -2,14 +2,13 @@
 	import { Button, Divider } from '$ui/components';
 	import Typography from '$ui/components/base/Typography/Typography.svelte';
 	import Icon from '$ui/components/icons';
-	import { Story } from '@storybook/addon-svelte-csf';
-	import type { Meta } from '@storybook/svelte';
-	import type { SvelteComponent } from 'svelte';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import DropDown from './';
 
-	export const meta: Meta<SvelteComponent<typeof DropDown.Root>> = {
-		title: 'components/overlay/DropDown'
-	};
+	const { Story } = defineMeta({
+		title: 'components/overlay/DropDown',
+		component: DropDown.Root
+	});
 </script>
 
 <Story name="Default">

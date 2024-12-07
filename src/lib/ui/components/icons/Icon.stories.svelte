@@ -1,12 +1,6 @@
 <script lang="ts" context="module">
-	import { Story } from '@storybook/addon-svelte-csf';
-	import type { Meta } from '@storybook/svelte';
-	import type { SvelteComponent } from 'svelte';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import Icon from './';
-
-	export const meta: Meta<SvelteComponent<never>> = {
-		title: 'components/icons/Icon'
-	};
 
 	const icons: Array<{
 		name: string;
@@ -19,6 +13,9 @@
 			component: Icon[icon as keyof typeof Icon]
 		});
 	}
+	const { Story } = defineMeta({
+		title: 'components/icons/Icon'
+	});
 </script>
 
 <Story name="Default">

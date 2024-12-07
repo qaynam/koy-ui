@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RouteList } from '$lib/type';
+	type RouteList = $$Generic<`/${string}`>;
 	import type { HTMLAnchorAttributes } from 'svelte/elements';
 	import style from './style';
 

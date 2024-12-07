@@ -1,12 +1,11 @@
 <script lang="ts" context="module">
-	import { Story } from '@storybook/addon-svelte-csf';
-	import type { Meta } from '@storybook/svelte';
-	import type { SvelteComponent } from 'svelte';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import SingleChoicer from './SingleChoicer.svelte';
 
-	export const meta: Meta<SvelteComponent<SingleChoicer<never>>> = {
-		title: 'components/form/SingleChoicer'
-	};
+	const { Story } = defineMeta({
+		title: 'components/form/SingleChoicer',
+		component: SingleChoicer
+	});
 </script>
 
 <script lang="ts">
