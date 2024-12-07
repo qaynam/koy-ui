@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-	const createDropDownStore = () => {
+	const createDropDown = () => {
 		const dropDown = writable({
 			show: false,
 			setShow: (show: boolean) => {
@@ -10,7 +10,7 @@
 		return dropDown;
 	};
 
-	export type DropDownContext = ReturnType<typeof createDropDownStore>;
+	export type DropDownContext = ReturnType<typeof createDropDown>;
 </script>
 
 <script lang="ts">
@@ -18,7 +18,7 @@
 	import { writable } from 'svelte/store';
 	import style from './style';
 
-	setContext('dropdown', createDropDownStore());
+	setContext('dropdown', createDropDown());
 </script>
 
 <div class={style.DropDown}>

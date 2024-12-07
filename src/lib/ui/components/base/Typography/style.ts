@@ -9,13 +9,15 @@ const Base = ({
 	color,
 	align,
 	whiteSpace,
-	wordBreak
+	wordBreak,
+	truncate
 }: {
 	fontKey?: FontKey;
 	color: Colors;
 	align: Align;
 	whiteSpace: Properties['whiteSpace'];
 	wordBreak?: Properties['wordBreak'];
+	truncate?: boolean;
 }) => css`
 	${applyFont(fontKey ? fonts[fontKey] : fonts.body)}
 	color: ${colors[color]};
@@ -27,6 +29,13 @@ const Base = ({
 	${wordBreak &&
 	css`
 		word-break: ${wordBreak};
+	`};
+
+	${truncate &&
+	css`
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	`};
 `;
 

@@ -6,6 +6,7 @@ export const colors = Object.freeze({
 	white: '#FFFFFF',
 	whiteTransparent50: 'rgba(255, 255, 255, 0.5)',
 	gray: '#6D6D6D',
+	gray50: '#FBFBFB',
 	gray100: '#F5F5F5',
 	gray400: '#E4E4E4',
 	gray500: '#BCBCBC',
@@ -18,6 +19,7 @@ export const colors = Object.freeze({
 	greenLight: '#bbf7d0',
 	green: '#4ade80',
 	greenDark: '#047857',
+	yellowExtraLight: '#FFFEF0',
 	yellowLight: '#F2F7BB',
 	yellow: '#FFF855',
 	yellowDark: '#9A8B04'
@@ -37,6 +39,8 @@ export const borders = Object.freeze({
 } as const);
 
 export const roundness = Object.freeze({
+	/** 4px */
+	medium: '6px',
 	/** 8px */
 	default: '8px',
 	/** 10 */
@@ -76,15 +80,39 @@ export const spacing = Object.freeze({
 
 export const fonts = Object.freeze({
 	/**
-	 * fontSize: "24px",
-	 * fontWeight: "700",
-	 * lineHeight: "normal",
+	 * fontFamily: Noto Sans JP;
+	 * fontSize: 12px;
+	 * fontWeight: 400;
+	 * lineHeight: 26px;
 	 */
-	title: {
-		fontFamily: `'Noto Sans JP'`,
-		fontSize: '24px',
-		fontWeight: 700,
-		lineHeight: 'normal'
+	small: {
+		fontFamily: `'Noto Sans JP', sans-serif`,
+		fontSize: '12px',
+		fontWeight: 400,
+		lineHeight: '20px'
+	},
+	/**
+	 * fontFamily: Noto Sans JP;
+	 * fontSize: 12px;
+	 * fontWeight: 500;
+	 * lineHeight: 26px;
+	 */
+	small_M_bold: {
+		fontFamily: `'Noto Sans JP', sans-serif`,
+		fontSize: '12px',
+		fontWeight: 500,
+		lineHeight: '20px'
+	},
+	/**
+	 * fontSize: "14px",
+	 * fontWeight: "300",
+	 * lineHeight: "24px",
+	 */
+	body_Light: {
+		fontFamily: `'Noto Sans JP', sans-serif`,
+		fontSize: '14px',
+		fontWeight: 300,
+		lineHeight: '24px'
 	},
 	/**
 	 * fontSize: "14px",
@@ -95,7 +123,7 @@ export const fonts = Object.freeze({
 		fontFamily: `'Noto Sans JP', sans-serif`,
 		fontSize: '14px',
 		fontWeight: 400,
-		lineHeight: '20px'
+		lineHeight: '24px'
 	},
 	/**
 	 * fontWeight: "500",
@@ -133,34 +161,89 @@ export const fonts = Object.freeze({
 		fontWeight: 500,
 		lineHeight: '26px'
 	},
+	/**
+	 * fontFamily: Noto Sans JP;
+	 * fontSize: 16px;
+	 * fontWeight: 700;
+	 * lineHeight: 26px;
+	 */
+	medium_L_bold: {
+		fontFamily: `'Noto Sans JP', sans-serif`,
+		fontSize: '16px',
+		fontWeight: 700,
+		lineHeight: '26px'
+	},
 
 	/**
 	 * fontFamily: Noto Sans JP;
-	 * fontSize: 12px;
+	 * fontSize: 20px;
 	 * fontWeight: 400;
-	 * lineHeight: 26px;
+	 * lineHeight: 28px;
 	 */
-	small: {
+	large: {
 		fontFamily: `'Noto Sans JP', sans-serif`,
-		fontSize: '12px',
+		fontSize: '20px',
 		fontWeight: 400,
-		lineHeight: '20px'
+		lineHeight: '28px'
 	},
 	/**
 	 * fontFamily: Noto Sans JP;
-	 * fontSize: 12px;
+	 * fontSize: 20px;
 	 * fontWeight: 500;
-	 * lineHeight: 26px;
+	 * lineHeight: 28px;
 	 */
-	small_M_bold: {
+	large_M_bold: {
 		fontFamily: `'Noto Sans JP', sans-serif`,
-		fontSize: '12px',
+		fontSize: '20px',
+		fontWeight: 500,
+		lineHeight: '28px'
+	},
+
+	/**
+	 * fontFamily: Noto Sans JP;
+	 * fontSize: 24px;
+	 * fontWeight: 400;
+	 * lineHeight: 30px;
+	 */
+	xlarge: {
+		fontFamily: `'Noto Sans JP', sans-serif`,
+		fontSize: '24px',
 		fontWeight: 400,
-		lineHeight: '20px'
+		lineHeight: '30px'
+	},
+	/**
+	 * fontFamily: Noto Sans JP;
+	 * fontSize: 24px;
+	 * fontWeight: 500;
+	 * lineHeight: 30px;
+	 */
+	xlarge_M_bold: {
+		fontFamily: `'Noto Sans JP', sans-serif`,
+		fontSize: '24px',
+		fontWeight: 500,
+		lineHeight: '30px'
+	},
+	/**
+	 * fontSize: "24px",
+	 * fontWeight: "700",
+	 * lineHeight: "normal",
+	 */
+	title: {
+		fontFamily: `'Noto Sans JP'`,
+		fontSize: '24px',
+		fontWeight: 700,
+		lineHeight: 'normal'
 	}
 } as const);
 
 export const shadows = Object.freeze({
 	float: `0px 0px 4px 1px rgba(109, 109, 109, 0.25)`,
 	drop: `rgba(0, 0, 0, 0.25) 0px 25px 50px -12px`
+} as const);
+
+export const ZIndexs = Object.freeze({
+	MODAL: 104,
+	TOAST: 110,
+	GLOBAL_ERROR_MODAL: 120,
+	ERROR_BOUNDARY: 130
 } as const);

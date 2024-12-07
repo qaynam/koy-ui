@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Icon, { type IconType } from '$ui/';
-	import type { HTMLInputAttributes } from 'svelte/elements';
+	import Icon, { type IconType } from '$ui/components/icons';
 	import styles from './style';
 	import type { InputComponentType } from './type';
+	import type { FormEventHandler, HTMLInputAttributes } from 'svelte/elements';
 
 	interface $$Props extends HTMLInputAttributes {
 		icon?: IconType | undefined;
@@ -14,6 +14,8 @@
 		checked?: boolean;
 		error?: boolean;
 		onIconClick?: () => void;
+		onChange?: (e: Event) => void;
+		onInput?: FormEventHandler<HTMLInputElement>;
 	}
 
 	export let icon: IconType | undefined = undefined;
@@ -24,7 +26,9 @@
 	export let width: $$Props['width'] = undefined;
 	export let error: $$Props['error'] = false;
 	export let inputmode: $$Props['inputmode'] = 'text';
-	export let onIconClick: () => void = () => {};
+	export let onIconClick: $$Props['onIconClick'] = () => {};
+	export let onChange: $$Props['onChange'] = () => {};
+	export let onInput: NonNullable<$$Props['onInput']> = () => {};
 </script>
 
 {#if icon}
@@ -32,14 +36,16 @@
 		<input
 			class={styles.Base({ withIcon: !!icon, fill: !!width, error: !!error, iconPosition })}
 			bind:value
-			on:change
+			on:change={onChange}
+			on:input={onInput}
 			{inputmode}
 			{...{ type }}
 			{...$$restProps}
 		/>
 		<button
 			class={styles.Icon({ iconClickable, iconPosition })}
-			tabindex="-1"
+			tabindex={iconClickable ? 0 : -1}
+			type="button"
 			on:click={() => iconClickable && onIconClick?.()}
 			on:keydown={() => {}}
 		>
@@ -50,6 +56,8 @@
 	<input
 		class={styles.Base({ withIcon: !!icon, fill: !!width, error: !!error, iconPosition })}
 		bind:value
+		on:change={onChange}
+		on:input={onInput}
 		{...{ type }}
 		{inputmode}
 		{...$$restProps}

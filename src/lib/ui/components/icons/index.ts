@@ -18,6 +18,12 @@ import Selector from './Selector.svelte';
 import XMark from './XMark.svelte';
 import DotVertical from './DotVertical.svelte';
 import Yen from './Yen.svelte';
+import User from './User.svelte';
+import Certificate from './Certificate.svelte';
+import BuildingStore from './BuildingStore.svelte';
+import Download from './Download.svelte';
+import Link from './Link.svelte';
+import GripVertical from './GripVertical.svelte';
 
 const Icon = {
 	Eye,
@@ -39,8 +45,14 @@ const Icon = {
 	Selector,
 	XMark,
 	DotVertical,
-	Yen
-} as const;
+	Yen,
+	User,
+	Certificate,
+	BuildingStore,
+	Download,
+	Link,
+	GripVertical
+};
 
 export type IconType = keyof typeof Icon;
 

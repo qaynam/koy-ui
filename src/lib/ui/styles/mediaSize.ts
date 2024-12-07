@@ -30,3 +30,5 @@ export const MediaSize = {
 			}
 		`
 };
+
+export const ViewContainerWidth = 414;

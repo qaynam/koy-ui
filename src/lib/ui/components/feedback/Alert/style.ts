@@ -1,4 +1,4 @@
-import { borders, colors, roundness, spacing, style } from '../../../styles';
+import { applyFont, borders, colors, fonts, roundness, spacing, style } from '../../../styles';
 import { css } from '@emotion/css';
 import type { Colors } from '../../../styles/types';
 import type { AlertComponentTypes } from './types';
@@ -23,6 +23,7 @@ const Alert = ({ type }: { type: AlertComponentTypes.Type }) => css`
 	padding: ${spacing.XLarge};
 	background-color: ${colors[AlertBackground[type]]};
 	color: ${colors[AlertTextColor[type]]};
+	${applyFont(fonts.body)};
 `;
 
 export default style('Alert', { Alert });

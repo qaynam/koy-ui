@@ -2,7 +2,6 @@
 	import { HStack, Typography, VStack } from '../..';
 	import style from './style';
 
-	// eslint-disable-next-line no-undef
 	type Item<V extends string> = $$Generic<{
 		value: string;
 		label: V;
@@ -57,7 +56,7 @@
 			class={style.Item({ active: active(item) })}
 		>
 			<HStack items="center">
-				<span class={style.Radio({ active: active(item) })} />
+				<span class={style.Radio({ active: active(item) })}> </span>
 				<span>
 					<Typography>
 						{item.label}

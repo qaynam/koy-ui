@@ -1,8 +1,5 @@
-import Button from './Button/Button.svelte';
-// import ButtonIcon from './ButtonIcon/ButtonIcon.svelte';
-import Link from './Link/Link.svelte';
-import Typography from './Typography/Typography.svelte';
-import Badge from './Badge/Badge.svelte';
-import Divider from './Divider/Divider.svelte';
-
-export { Link, Button, Typography, Badge, Divider };
+export { default as Button } from './Button/Button.svelte';
+export { default as Link } from './Link/Link.svelte';
+export { default as Typography } from './Typography/Typography.svelte';
+export { default as Badge } from './Badge/Badge.svelte';
+export { default as Divider } from './Divider/Divider.svelte';

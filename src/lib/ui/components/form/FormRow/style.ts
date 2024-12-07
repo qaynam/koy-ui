@@ -2,9 +2,9 @@ import { spacing, style } from '../../../styles';
 import { css } from '@emotion/css';
 
 const Base = css`
-	display: grid;
+	display: flex;
 	gap: ${spacing.default};
-	grid-template-columns: 1fr;
+	flex-direction: column;
 `;
 
 export default style('FormRow', {

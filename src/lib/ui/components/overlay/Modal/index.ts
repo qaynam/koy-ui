@@ -1,7 +1,7 @@
-import Root from './Modal.svelte';
-import Title from './Title.svelte';
 import Body from './Body.svelte';
 import Footer from './Footer.svelte';
+import Root from './Modal.svelte';
+import Title from './Title.svelte';
 
 const Modal = {
 	Root,

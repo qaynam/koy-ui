@@ -1,5 +1,5 @@
-import { MediaSize, colors, roundness, spacing, style } from '../../../styles';
 import { css } from '@emotion/css';
+import { MediaSize, colors, roundness, spacing, style } from '../../../styles';
 import type { ModalTypes } from './type';
 
 const ModalWrapper = css`
@@ -13,12 +13,34 @@ const ModalWrapper = css`
 	background: unset;
 `;
 
+const LargeModalStyle = css`
+	width: 60%;
+	min-width: 604px; /** 商品画像のモーダルが改行されない幅 */
+	min-height: 200px;
+	max-height: 80%;
+`;
+
+const MediumModalStyle = css`
+	max-width: 520px;
+	min-height: 200px;
+	max-height: 80%;
+`;
+
+// const SmallModalStyle = css`
+// 	width: 320px;
+// 	min-height: 200px;
+// 	max-height: 80%;
+// `;
+
+const DefaultModalStyle = css`
+	width: 320px;
+	min-height: 200px;
+	max-height: 80%;
+`;
+
 const Modal = ({ size }: { size: ModalTypes.Size }) => css`
 	align-self: center;
 	position: relative;
-	min-width: ${size === 'large' ? 480 : 320}px;
-	max-width: ${size === 'large' ? 680 : 480}px;
-	min-height: ${size === 'large' ? 600 : 200}px;
 	margin: auto;
 	z-index: 105;
 	background-color: ${colors.white};
@@ -26,9 +48,24 @@ const Modal = ({ size }: { size: ModalTypes.Size }) => css`
 	display: flex;
 	flex-direction: column;
 
+	${size === 'large' &&
+	css`
+		${LargeModalStyle}
+	`}
+	${size === 'medium' &&
+	css`
+		${MediumModalStyle}
+	`}
+	${size === 'default' &&
+	css`
+		${DefaultModalStyle}
+	`}
+
+
 	${MediaSize.lessThen('tablet')`
-		width: 90%;
-		max-height: 80%;
+		width: 95%;
+		min-width: 95%;
+		max-height: 95%;
 	`}
 `;
 
@@ -53,8 +90,8 @@ const Body = css`
 	padding: ${spacing.X8};
 	flex-grow: 1;
 	height: 100%;
-	width: 100%;
 	overflow-y: auto;
+	word-break: break-all;
 `;
 
 const Footer = css`

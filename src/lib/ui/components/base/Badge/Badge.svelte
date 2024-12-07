@@ -3,13 +3,15 @@
 	import { Typography } from '..';
 	import style from './style';
 
-	type Bg = Extract<Colors, 'greenLight' | 'gray400'>;
+	type Bg = Extract<Colors, 'greenLight' | 'gray400' | 'white' | 'gray100'>;
 
 	export let text: string;
 	export let bg: Bg = 'gray400';
 	let textColor: Record<Bg, Colors> = {
 		greenLight: 'greenDark',
-		gray400: 'gray'
+		gray400: 'gray',
+		gray100: 'gray',
+		white: 'gray'
 	};
 </script>
 

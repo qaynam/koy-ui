@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Portal from 'svelte-portal';
 	import style from './style';
-	// import { beforeNavigate, onNavigate } from '$app/navigation';
 
 	interface $$Props {
 		started?: boolean;
@@ -13,26 +12,8 @@
 	export let canceled = false;
 	export let started = false;
 
-	// beforeNavigate(() => {
-	// 	started = true;
-	// });
-
-	// onNavigate(({ complete: _complete, willUnload }) => {
-	// 	_complete
-	// 		.catch(() => {
-	// 			canceled = true;
-	// 		})
-	// 		.finally(() => {
-	// 			complete = true;
-	// 		});
-
-	// 	if (willUnload) {
-	// 		canceled = true;
-	// 	}
-	// });
-
 	$: {
-		let timer: NodeJS.Timeout | null = null;
+		let timer: ReturnType<typeof setTimeout> | null = null;
 		if (started === true) {
 			timer = setTimeout(() => {
 				canceled = true;
@@ -58,6 +39,6 @@
 
 <Portal target="#portal">
 	{#if started}
-		<div class={style.ProgressBar({ canceled, complete })} />
+		<div class={style.ProgressBar({ canceled, complete })}></div>
 	{/if}
 </Portal>

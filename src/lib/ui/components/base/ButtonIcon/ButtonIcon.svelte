@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { type ComponentType, type SvelteComponent } from 'svelte';
+	import { type Component } from 'svelte';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 	import Button from '../Button/Button.svelte';
 	import type { ButtonTypes } from '../Button/types';
@@ -9,7 +9,7 @@
 		 * ボタンに表示するアイコン
 		 * @default undefined
 		 */
-		icon: ComponentType<SvelteComponent> | undefined;
+		icon: Component | undefined;
 		/**
 		 * ボタンの種類
 		 */
@@ -46,7 +46,7 @@
 		onClick?: () => void;
 	}
 
-	export let icon: ComponentType<SvelteComponent> | undefined;
+	export let icon: Component | undefined;
 	export let type: HTMLButtonAttributes['type'] = 'button';
 	export let variant: Exclude<ButtonTypes.ButtonVariant, 'tertiary'> = 'primary';
 	export let shadow: boolean = false;

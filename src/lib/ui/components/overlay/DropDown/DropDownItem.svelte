@@ -1,7 +1,11 @@
 <script lang="ts">
 	import style from './style';
 
-	export let onClick = () => {};
+	interface $$Props {
+		onClick?: () => void;
+	}
+
+	export let onClick: $$Props['onClick'] = () => {};
 </script>
 
 <!-- eslint-disable-next-line svelte/valid-compile -->

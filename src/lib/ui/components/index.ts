@@ -1,3 +1,6 @@
+import Icon from './icons';
+export { Icon };
+
 export * from './base';
 export * from './form';
 export * from './layout';

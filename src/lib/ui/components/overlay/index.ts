@@ -1,4 +1,3 @@
-import Modal from './Modal';
-import DropDown from './DropDown';
-
-export { Modal, DropDown };
+export { default as Modal } from './Modal';
+export { default as BottomSheet } from './BottomSheet';
+export { default as DropDown } from './DropDown';

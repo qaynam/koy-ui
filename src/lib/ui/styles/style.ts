@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { dev } from '$app/environment';
 import { cx, css } from '@emotion/css';
-
-const dev = import.meta.env.MODE === 'development';
 
 export function getStyleLabel(namespace: string, key: string | number | symbol) {
 	if (!dev) {

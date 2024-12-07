@@ -1,8 +1,7 @@
-import { style } from '../../../styles';
 import { borders, colors, fonts, roundness, spacing } from '../../../styles/theme';
-import { applyFont } from '../../../styles/utils';
 import { css } from '@emotion/css';
 import type { InputComponentType } from './type';
+import { applyFont, style } from '$ui/styles';
 
 const ICON_WIDTH = '20px';
 
@@ -30,9 +29,12 @@ const Base = ({
 		user-select: none;
 	}
 
-	&:disabled {
+	&:disabled,
+	&[disabled='true'] {
 		background-color: ${colors.gray400};
 		cursor: not-allowed;
+		-webkit-text-fill-color: ${colors.gray};
+		color: ${colors.gray};
 	}
 
 	&:focus {

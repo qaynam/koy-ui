@@ -1,11 +1,11 @@
-import { borders, colors, roundness, spacing, style } from '$ui/styles';
 import { css } from '@emotion/css';
+import { borders, colors, roundness, spacing, style } from '$ui/styles';
 
 const SelectBox = ({ error }: { error: boolean }) => css`
-	& > select {
+	select {
 		appearance: none;
 		background: none;
-		padding: ${spacing.default} ${spacing.large};
+		padding-right: ${spacing.X16};
 		outline: none;
 		border: none;
 		color: ${colors.dark};
@@ -17,8 +17,9 @@ const SelectBox = ({ error }: { error: boolean }) => css`
 	border-radius: ${roundness.default};
 	color: ${colors.dark};
 	position: relative;
+	padding: ${spacing.default};
 
-	& > svg {
+	svg {
 		position: absolute;
 		right: ${spacing.default};
 		top: 50%;

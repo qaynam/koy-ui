@@ -1,17 +1,24 @@
-import { colors, shadows, spacing, style } from '$ui/styles';
 import { css } from '@emotion/css';
+import { colors, shadows, spacing, style } from '$ui/styles';
 
 const DropDown = css`
 	position: relative;
 	z-index: 100;
+	display: inline-block;
 `;
 
-const DropDownItems = css`
+const DropDownItems = ({ align }: { align: 'left' | 'right' }) => css`
 	position: absolute;
 	z-index: 1;
 	width: fit-content;
+	${align === 'left'
+		? css`
+				left: 0;
+			`
+		: css`
+				right: 0;
+			`}
 	top: calc(100% + ${spacing.default});
-	right: 0;
 	background-color: ${colors.white};
 	box-shadow: ${shadows.drop};
 	padding: ${spacing.XLarge};

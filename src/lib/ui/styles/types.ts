@@ -1,4 +1,4 @@
-import type { colors, fonts, spacing } from '.';
+import type { colors, fonts, spacing, ZIndexs } from '.';
 
 export type FontKey = keyof typeof fonts;
 export type Font = (typeof fonts)[FontKey];
@@ -30,3 +30,14 @@ export type Font = (typeof fonts)[FontKey];
  */
 export type Spacing = keyof typeof spacing;
 export type Colors = keyof typeof colors;
+/**
+ *
+ * MODAL: 104
+ *
+ * TOAST: 110
+ *
+ * GLOBAL_ERROR_MODAL: 120
+ *
+ * ERROR_BOUNDARY: 130
+ */
+export type ZIndex = keyof typeof ZIndexs;

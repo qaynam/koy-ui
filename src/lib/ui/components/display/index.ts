@@ -1,5 +1,3 @@
-import ListGroup from './ListGroup/ListGroup.svelte';
-import ListGroupItem from './ListGroup/ListGroupItem.svelte';
-import ProgressBar from './ProgressBar/ProgressBar.svelte';
-
-export { ListGroup, ListGroupItem, ProgressBar };
+export { default as ListGroup } from './ListGroup/ListGroup.svelte';
+export { default as ListGroupItem } from './ListGroup/ListGroupItem.svelte';
+export { default as ProgressBar } from './ProgressBar/ProgressBar.svelte';
