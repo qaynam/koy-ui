@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { dev } from '$app/environment';
 import { cx, css } from '@emotion/css';
+
+const dev = import.meta.env.MODE === 'development';
 
 export function getStyleLabel(namespace: string, key: string | number | symbol) {
 	if (!dev) {
@@ -11,7 +12,7 @@ export function getStyleLabel(namespace: string, key: string | number | symbol) 
 }
 
 // prettier-ignore
-type Name = `${"A"|"B"|"C"|"D"|"E"|"F"|"G"|"H"|"I"|"J"|"K"|"L"|"M"|"N"|"O"|"P"|"Q"|"R"|"S"|"T"|"U"|"V"|"W"|"X"|"Y"|"Z"}${string}`
+type Name = `${"A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z"}${string}`
 
 export function style<
 	V extends string | ((...params: any[]) => string),
