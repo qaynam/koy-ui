@@ -77,7 +77,7 @@
 		onClick?: (e: MouseEvent) => void;
 	}
 
-	export let icon: ComponentType<SvelteComponent> | undefined = undefined;
+	export let icon: Component | undefined = undefined;
 	export let iconPosition: 'left' | 'right' = 'left';
 	export let variant: ButtonTypes.ButtonVariant = 'primary';
 	export let width: ButtonTypes.Width = 'auto';

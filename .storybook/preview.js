@@ -1,3 +1,5 @@
+import './global.css';
+
 /** @type { import('@storybook/svelte').Preview } */
 const preview = {
 	parameters: {
@@ -7,7 +9,8 @@ const preview = {
 				date: /Date$/i
 			}
 		}
-	}
+	},
+	tags: ['autodocs']
 };
 
 export default preview;

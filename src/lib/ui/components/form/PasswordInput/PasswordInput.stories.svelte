@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
 	import { defineMeta } from '@storybook/addon-svelte-csf';
-	import { PasswordInput, VStack } from '$ui/components';
+	import { PasswordInput } from '$ui/components';
 
 	const { Story } = defineMeta({
 		title: 'components/form/PasswordInput',
@@ -9,12 +9,13 @@
 			placeholder: { control: 'text' },
 			id: { control: 'text' },
 			name: { control: 'text' }
+		},
+		args: {
+			placeholder: 'Password',
+			id: 'password',
+			name: 'password'
 		}
 	});
 </script>
 
-<Story name="Default">
-	<VStack>
-		<PasswordInput id="password-input" name="password" placeholder="Placeholder" />
-	</VStack>
-</Story>
+<Story name="Default"></Story>
