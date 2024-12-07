@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-	import { defineMeta } from '@storybook/addon-svelte-csf';
+	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
 	import HStack from './HStack.svelte';
 
 	const { Story } = defineMeta({
@@ -8,10 +8,16 @@
 	});
 </script>
 
-<Story name="Default">
-	<HStack>
+<script lang="ts">
+	setTemplate(template);
+</script>
+
+{#snippet template(args: Args<typeof Story>)}
+	<HStack {...args}>
 		<div>Item 1</div>
 		<div>Item 2</div>
 		<div>Item 3</div>
 	</HStack>
-</Story>
+{/snippet}
+
+<Story name="Default"></Story>

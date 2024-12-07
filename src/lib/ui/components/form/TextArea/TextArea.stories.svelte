@@ -1,7 +1,6 @@
 <script lang="ts" context="module">
-	import { defineMeta } from '@storybook/addon-svelte-csf';
-	import TextArea from './TextArea.svelte';
-	import { Typography, VStack } from '$ui/components';
+	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
+	import { TextArea } from '$ui/components';
 
 	const { Story } = defineMeta({
 		title: 'components/form/TextArea',
@@ -9,11 +8,12 @@
 	});
 </script>
 
-<Story name="Default">
-	<div style:width="400px">
-		<VStack>
-			<Typography font="medium_M_bold">TextArea</Typography>
-			<TextArea rows={10} width="full" />
-		</VStack>
-	</div>
-</Story>
+<script lang="ts">
+	setTemplate(template);
+</script>
+
+{#snippet template(args: Args<typeof Story>)}
+	<TextArea {...args}></TextArea>
+{/snippet}
+
+<Story name="Default"></Story>

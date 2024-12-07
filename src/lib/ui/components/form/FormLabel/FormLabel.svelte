@@ -2,7 +2,7 @@
 	import type { HTMLLabelAttributes } from 'svelte/elements';
 	import styles from './style';
 
-	interface $$Props extends HTMLLabelAttributes {
+	interface $$Props extends Pick<HTMLLabelAttributes, 'for'> {
 		required?: boolean;
 	}
 

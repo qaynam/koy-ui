@@ -1,40 +1,32 @@
 <script lang="ts" context="module">
-	import { defineMeta } from '@storybook/addon-svelte-csf';
+	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
 
 	const { Story } = defineMeta({
 		title: 'components/overlay/BottomSheet',
 		argTypes: {
 			height: {
 				control: {
-					type: 'text'
+					type: 'number',
+					min: 30,
+					max: 100
 				}
 			}
+		},
+		args: {
+			show: false,
+			height: 30
 		}
 	});
 </script>
 
 <script lang="ts">
-	import { Button, HStack, VStack, BottomSheet, Typography, SelectBox } from '$ui/components';
+	import { HStack, VStack, BottomSheet, Typography } from '$ui/components';
 
-	let show = false;
-	let height: string | undefined = undefined;
-
-	$: handleClick = () => (show = !show);
-	$: bottomSheetHeight = height ? Number(height) : undefined;
+	setTemplate(template);
 </script>
 
-<Story name="Default">
-	<div>
-		<VStack width="fill" wrap={false}>
-			<Button onClick={handleClick}>Open BottomSheet</Button>
-			<SelectBox bind:value={height} placeholder="bottom sheet height">
-				<option value="30">30(default)</option>
-				<option value="50">50</option>
-				<option value="80">80</option>
-			</SelectBox>
-		</VStack>
-	</div>
-	<BottomSheet bind:show height={bottomSheetHeight}>
+{#snippet template(args: Args<typeof Story>)}
+	<BottomSheet show={false} {...args}>
 		<VStack>
 			<Typography font="body_M_Bold">Bottom Sheet Modal</Typography>
 			<HStack wrap>
@@ -44,4 +36,6 @@
 			</HStack>
 		</VStack>
 	</BottomSheet>
-</Story>
+{/snippet}
+
+<Story name="Default"></Story>

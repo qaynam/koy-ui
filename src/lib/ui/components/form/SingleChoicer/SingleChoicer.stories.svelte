@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-	import { defineMeta } from '@storybook/addon-svelte-csf';
+	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
 	import SingleChoicer from './SingleChoicer.svelte';
 
 	const { Story } = defineMeta({
@@ -22,8 +22,17 @@
 	const handleChange = (params: { item: { label: string; value: string } }) => {
 		selectedItem = params.item.label;
 	};
+	setTemplate(template);
 </script>
 
-<Story name="Default">
-	<SingleChoicer {items} onChange={handleChange} name="single-choicer" active={handleActive} />
-</Story>
+{#snippet template(args: Args<typeof Story>)}
+	<SingleChoicer
+		{items}
+		onChange={handleChange}
+		name="single-choicer"
+		active={handleActive}
+		{...args}
+	/>
+{/snippet}
+
+<Story name="Default"></Story>

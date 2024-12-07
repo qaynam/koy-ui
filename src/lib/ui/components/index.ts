@@ -1,5 +1,5 @@
-import Icon from './icons';
-export { Icon };
+export { default as Icon } from './icons';
+export type * from './icons';
 
 export * from './base';
 export * from './form';

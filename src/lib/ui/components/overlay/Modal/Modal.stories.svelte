@@ -1,21 +1,29 @@
 <script lang="ts" context="module">
-	import { Button, Modal } from '$ui/components';
-	import ModalRoot from './Modal.svelte';
-	import { defineMeta } from '@storybook/addon-svelte-csf';
+	import { Modal, Button } from '$ui/components';
+	import {
+		defineMeta,
+		setTemplate,
+		type Args,
+		type StoryContext
+	} from '@storybook/addon-svelte-csf';
 
 	const { Story } = defineMeta({
 		title: 'components/overlay/Modal',
-		component: ModalRoot
+		component: Modal.Root,
+		args: {
+			show: false,
+			size: 'default',
+			zIndex: 'MODAL'
+		}
 	});
 </script>
 
 <script lang="ts">
-	export let show = false;
+	setTemplate(template);
 </script>
 
-<Story name="Default">
-	<Button onClick={() => (show = !show)}>Open Modal</Button>
-	<Modal.Root {show}>
+{#snippet template(args: Args<typeof Story>, context: StoryContext<typeof Story>)}
+	<Modal.Root show={false} {...args}>
 		<Modal.Title>
 			<h2>Modal</h2>
 		</Modal.Title>
@@ -27,12 +35,21 @@
 			</p>
 		</Modal.Body>
 		<Modal.Footer>
-			<Button onClick={() => (show = false)} shadow={false} variant="primary" width="wider">
+			<Button
+				onClick={() => {
+					args.show = false;
+				}}
+				shadow={false}
+				variant="primary"
+				width="wider"
+			>
 				Ok
 			</Button>
-			<Button onClick={() => (show = false)} shadow={false} variant="secondary" width="wider">
+			<Button onClick={() => (args.show = false)} shadow={false} variant="secondary" width="wider">
 				Close
 			</Button>
 		</Modal.Footer>
 	</Modal.Root>
-</Story>
+{/snippet}
+
+<Story name="Default"></Story>
