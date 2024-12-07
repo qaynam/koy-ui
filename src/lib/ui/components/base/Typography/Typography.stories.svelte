@@ -19,7 +19,8 @@
 					options: ['title', 'body_M_Bold', 'body_M', 'body_S_Bold', 'body_S']
 				}
 			}
-		}
+		},
+		tags: ['autodocs']
 	});
 </script>
 

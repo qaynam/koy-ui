@@ -5,12 +5,14 @@
 	const icons: Array<{
 		name: string;
 		component: (typeof Icon)[keyof typeof Icon];
+		tags: ['autodocs'];
 	}> = [];
 
 	for (const icon of Object.keys(Icon)) {
 		icons.push({
 			name: icon,
-			component: Icon[icon as keyof typeof Icon]
+			component: Icon[icon as keyof typeof Icon],
+			tags: ['autodocs']
 		});
 	}
 	const { Story } = defineMeta({

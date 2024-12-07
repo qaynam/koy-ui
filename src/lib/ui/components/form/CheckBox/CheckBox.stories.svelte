@@ -4,7 +4,8 @@
 	import { FormLabel } from '$ui/components';
 
 	const { Story } = defineMeta({
-		title: 'components/form/CheckBox'
+		title: 'components/form/CheckBox',
+		tags: ['autodocs']
 	});
 </script>
 

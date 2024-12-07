@@ -15,7 +15,8 @@
 				control: 'boolean',
 				defaultValue: false
 			}
-		}
+		},
+		tags: ['autodocs']
 	});
 </script>
 

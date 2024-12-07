@@ -4,7 +4,8 @@
 
 	const { Story } = defineMeta({
 		title: 'components/form/SelectBox',
-		component: SelectBox
+		component: SelectBox,
+		tags: ['autodocs']
 	});
 </script>
 

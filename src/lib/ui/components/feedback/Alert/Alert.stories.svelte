@@ -13,7 +13,8 @@
 					options: ['info', 'success', 'error']
 				}
 			}
-		}
+		},
+		tags: ['autodocs']
 	});
 </script>
 

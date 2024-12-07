@@ -9,7 +9,8 @@
 			placeholder: { control: 'text' },
 			id: { control: 'text' },
 			name: { control: 'text' }
-		}
+		},
+		tags: ['autodocs']
 	});
 </script>
 

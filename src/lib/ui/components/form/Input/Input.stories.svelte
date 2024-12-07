@@ -4,7 +4,8 @@
 	import Input from './Input.svelte';
 
 	const { Story } = defineMeta({
-		title: 'components/form/Input'
+		title: 'components/form/Input',
+		tags: ['autodocs']
 	});
 </script>
 

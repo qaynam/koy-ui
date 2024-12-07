@@ -5,7 +5,8 @@
 
 	const { Story } = defineMeta({
 		title: 'components/overlay/Modal',
-		component: ModalRoot
+		component: ModalRoot,
+		tags: ['autodocs']
 	});
 </script>
 

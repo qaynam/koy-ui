@@ -14,7 +14,8 @@
 		},
 		parameters: {
 			controls: { expanded: true }
-		}
+		},
+		tags: ['autodocs']
 	});
 </script>
 

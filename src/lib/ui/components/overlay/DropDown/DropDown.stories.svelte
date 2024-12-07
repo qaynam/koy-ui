@@ -7,7 +7,8 @@
 
 	const { Story } = defineMeta({
 		title: 'components/overlay/DropDown',
-		component: DropDown.Root
+		component: DropDown.Root,
+		tags: ['autodocs']
 	});
 </script>
 

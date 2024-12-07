@@ -22,7 +22,8 @@
 					type: 'boolean'
 				}
 			}
-		}
+		},
+		tags: ['autodocs']
 	});
 </script>
 

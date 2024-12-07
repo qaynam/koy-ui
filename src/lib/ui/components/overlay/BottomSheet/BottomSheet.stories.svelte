@@ -9,7 +9,8 @@
 					type: 'text'
 				}
 			}
-		}
+		},
+		tags: ['autodocs']
 	});
 </script>
 

@@ -6,7 +6,8 @@
 	import { VStack } from '../..';
 
 	const { Story } = defineMeta({
-		title: 'components/form/FormRow'
+		title: 'components/form/FormRow',
+		tags: ['autodocs']
 	});
 
 	const example: string = `<FormRow>

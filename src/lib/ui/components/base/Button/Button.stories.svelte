@@ -14,12 +14,13 @@
 					options: ['primary', 'secondary', 'tertiary']
 				}
 			}
-		}
+		},
+		tags: ['autodocs']
 	});
 </script>
 
 <Story
-	name="default"
+	name="Default"
 	args={{
 		loading: false,
 		shadow: true,
@@ -52,7 +53,7 @@
 	</VStack>
 </Story>
 
-<Story name="tertiary">
+<Story name="Tertiary">
 	<VStack>
 		<div>
 			<Button variant="tertiary">Button</Button>

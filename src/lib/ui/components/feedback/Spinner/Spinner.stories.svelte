@@ -4,7 +4,8 @@
 
 	const { Story } = defineMeta({
 		title: 'components/feedback/Spinner',
-		component: Spinner
+		component: Spinner,
+		tags: ['autodocs']
 	});
 </script>
 

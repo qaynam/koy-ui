@@ -5,7 +5,8 @@
 
 	const { Story } = defineMeta({
 		title: 'components/form/TextArea',
-		component: TextArea
+		component: TextArea,
+		tags: ['autodocs']
 	});
 </script>
 

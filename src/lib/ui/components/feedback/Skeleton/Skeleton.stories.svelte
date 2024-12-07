@@ -20,7 +20,8 @@
 			show: true,
 			width: '100%',
 			height: '400px'
-		}
+		},
+		tags: ['autodocs']
 	});
 </script>
 

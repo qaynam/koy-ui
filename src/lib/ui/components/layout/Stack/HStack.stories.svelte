@@ -4,7 +4,8 @@
 
 	const { Story } = defineMeta({
 		title: 'components/layout/HStack',
-		component: HStack
+		component: HStack,
+		tags: ['autodocs']
 	});
 </script>
 

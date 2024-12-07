@@ -4,7 +4,8 @@
 
 	const { Story } = defineMeta({
 		title: 'components/layout/VStack',
-		component: VStack
+		component: VStack,
+		tags: ['autodocs']
 	});
 </script>
 
