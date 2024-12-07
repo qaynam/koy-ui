@@ -23,4 +23,8 @@ Thumbs.db
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
+# ignore local pack zip
 koy-ui-v*.tgz
+
+# ignore sotrybook build
+storybook-static
