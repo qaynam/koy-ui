@@ -1,15 +1,16 @@
 <script lang="ts">
-	import { type Component } from 'svelte';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 	import Button from '../Button/Button.svelte';
 	import type { ButtonTypes } from '../Button/types';
+	import type { IconType } from '$ui/components/icons';
+	import { Icon } from '$ui/components';
 
 	interface $$Props {
 		/**
 		 * ボタンに表示するアイコン
 		 * @default undefined
 		 */
-		icon: Component | undefined;
+		icon: IconType | undefined;
 		/**
 		 * ボタンの種類
 		 */
@@ -46,17 +47,17 @@
 		onClick?: () => void;
 	}
 
-	export let icon: Component | undefined;
+	export let icon: IconType | undefined;
 	export let type: HTMLButtonAttributes['type'] = 'button';
 	export let variant: Exclude<ButtonTypes.ButtonVariant, 'tertiary'> = 'primary';
 	export let shadow: boolean = false;
 	export let disabled: boolean = false;
 	export let loading: boolean = false;
-	export let onClick: (() => void) | undefined = undefined;
+	export let onClick: () => void = () => void 0;
 </script>
 
 <Button {type} {variant} {shadow} {disabled} {loading} on:click={onClick}>
 	{#if icon}
-		<svelte:component this={icon} />
+		<svelte:component this={Icon[icon]} />
 	{/if}
 </Button>
