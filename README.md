@@ -1,6 +1,6 @@
 ## Koy UI
 
-![Design System cover](https://i.gyazo.com/babc5a2a332d3c0a4263d8e4b52e343b.jpeg)
+![Design System cover](https://i.gyazo.com/54e3c90420ff4d480b3d45265412e964.jpg)
 
 Koy UI is a simple UI libirary for Svelte.
 
