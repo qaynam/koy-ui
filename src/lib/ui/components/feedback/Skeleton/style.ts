@@ -20,9 +20,6 @@ const Skeleton = ({ width, height }: { width: string; height: string }) => css`
 	background-repeat: no-repeat;
 	border-radius: 4px;
 	line-height: 1;
-	/* width: 100%;
-  height: 50px; */
-	margin: 14px 0px 14px;
 	animation: ${SkeletonAnimation} 1.5s infinite ease-in-out;
 `;
 
