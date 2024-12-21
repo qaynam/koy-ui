@@ -33,7 +33,7 @@ const config = {
     property="og:description"
     content="Koy UI is a collection of Svelte components for building web applications."
     />
-  <meta property="og:image" content="https://i.gyazo.com/babc5a2a332d3c0a4263d8e4b52e343b.jpeg" />
+  <meta property="og:image" content="https://i.gyazo.com/54e3c90420ff4d480b3d45265412e964.jpg" />
   <meta
     property="og:image:alt"
     content="Koy UI CoverImage"
@@ -52,7 +52,7 @@ const config = {
   <meta property="twitter:description" content="Koy UI is a collection of Svelte components for building web applications." />
   <meta
     property="twitter:image"
-    content="https://i.gyazo.com/babc5a2a332d3c0a4263d8e4b52e343b.jpeg"
+    content="https://i.gyazo.com/54e3c90420ff4d480b3d45265412e964.jpg"
     />
   `
 };
