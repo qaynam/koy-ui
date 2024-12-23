@@ -8,8 +8,6 @@ Koy UI is a simple UI libirary for Svelte.
 
 [Storybook](https://koy-ui.vercel.app/)
 
-Documentaion site is on the way..
-
 ## Installation
 
 ```bash
